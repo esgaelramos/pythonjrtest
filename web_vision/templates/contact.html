@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    TEST PYTHON JR
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>CONTACT PYTHON JR</h1>
+    <div class="main-container">
+        <h1>Hi! I'm Gael Ramos</h1>
+    </div>
+    <!-- ---------- OPTIONS-CONTAINER ---------- -->
+    <div class="options-container">
+        <div class="option-item whatsapp-link">
+            <a href="https://api.whatsapp.com/send?phone=5215524418425&text=¡Hola+Gael!" class="option-item-item">
+                <div class="option-img">
+                    <img src="https://esgaelramos.xyz/assets/whatsapp.svg" alt="WhatsApp Logo" style="width: 70px;">
+                </div>
+                <div class="option text">
+                    <h2>WhatsApp Me</h2>
+                </div>
+            </a>
+        </div>
+        <div class="option-item mail-link">
+            <a href="mailto:esgaelramos@gmail.com?Subject=Me%20interesa%20tu%20perfil%20Gael" class="option-item-item">
+                <div class="option-img">
+                    <img src="https://esgaelramos.xyz/assets/mail.svg" alt="Mail Logo" style="width: 70px;">
+                </div>
+                <div class="option text">
+                    <h2>Send Mail</h2>
+                </div>
+            </a>
+        </div>
+        <div class="option-item download-pdf">
+            <a href="https://github.com/esgaelramos" class="option-item-item">
+                <div class="option-img">
+                    <img src="https://esgaelramos.xyz/assets/github.svg" alt="GitHub Logo" style="width: 70px;">
+                </div>
+                <div class="option text">
+                    <h2>My GitHub</h2>
+                </div>
+            </a>
+        </div>
+        <div class="option-item download-pdf">
+            <a href="assets/.pdf" download="CV-Gael-Ramos-Backend" class="option-item-item">
+                <div class="option-img">
+                    <img src="https://esgaelramos.xyz/assets/cv.svg" alt="CV Logo" style="width: 70px;">
+                </div>
+                <div class="option text">
+                    <h2>Download CV</h2>
+                </div>
+            </a>
+        </div>            
+    </div>
+
+
+{% endblock %}

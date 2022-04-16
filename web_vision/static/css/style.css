@@ -1,0 +1,587 @@
+/* **************************************************
+    PRINCIPAL STYLES 
+************************************************* **/
+:root{
+    --background-color: #bff1f5; 
+    --highlight-color: #be2598;
+    --extralight-color: #0d1a58;
+    --primary-color: #7ed1e4;
+    --header-color: #7bdeeb;
+    --body-color: #000000;
+}
+/* E2FFDB */
+body{
+    background-color: var(--background-color);
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.079;
+    font-size: 19px;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* **************************************************
+    HEADER CONTACT 
+************************************************* **/
+header{
+    height: 60px;
+}
+.header__container{
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: var(--header-color);
+    width: 100%;
+    height: 50px;
+}
+.header-title{
+    margin: auto 4vw;
+    font-size: 30px;
+}
+.header-title a span{
+    color: var(--extralight-color);
+    font-weight: bold;
+}
+/* --- MENU STATUS --- */
+.header-menu{
+    display: none;
+}
+#menu-mobile-options{
+    display: none;
+}
+#menu-pc-options{
+    display: flex;
+}
+/* --- MOBILE MENU --- */
+.header-menu{
+    text-align: end;
+}
+#menu-mobile-options{
+    display: none;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50px;
+    left: 0%;
+    min-width: 100vw;
+    animation: showNavbar 0.7s ease 0s 1 normal none;
+    animation-fill-mode: forwards;
+}
+.option-item{
+    text-align: center;
+    font-size: 20px;
+    list-style: none;
+    line-height: 1.7;
+}
+.option-item a{
+    color: var(--extralight-color);
+}
+.option-item a:hover{
+    color: var(--highlight-color);
+} 
+/* --- COMPUTER MENU --- */
+.option-item-pc{
+    list-style: none;
+    margin: auto;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+.option-item-pc a{
+    color: var(--extralight-color);
+}
+.option-item-pc a:hover{
+    color: var(--highlight-color);
+}
+/* --- HAMBURGER MENU --- */
+#header_navbar{
+    position: fixed;
+    transition: top 1.3s;
+    z-index: 100;
+}
+#navbar-button{
+    height: 50px;
+    width: 200px;
+    margin: 6px;
+}
+#navbar-button button{
+    width: 80px;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    border: 0;
+}
+#navbar-button button span{
+    border-radius: 5px;
+    background-color: var(--extralight-color);
+    display: block;
+    width: 50%;
+    margin: 5px auto;
+    height: 6px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+/* --- HAMBURGER NAME ANIMATIONS --- */
+#navbar-button button.open .top-line{
+    animation-name: top-line-animation;
+}
+#navbar-button button.open .mid-line{
+    animation-name: mid-line-animation;
+}
+#navbar-button button.open .bottom-line{
+    animation-name: bottom-line-animation;
+}
+#navbar-button button .top-line{
+    animation-name: top-line-animation-close;
+}
+#navbar-button button .mid-line{
+    animation-name: mid-line-animation-close;
+}
+#navbar-button button .bottom-line{
+    animation-name: bottom-line-animation-close;
+}
+
+/* **************************************************
+    CONTACT
+************************************************* **/
+.main-container h1{
+    font-size: 34px;
+}
+/* --- OPTIONS --- */
+.options-container{
+    margin: 2vw;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.option-item{
+    margin: 2vw;
+    padding: 1vw;
+    border-radius: 2px;
+    outline: 3px solid var(--primary-color);
+    min-width: 320px;
+}
+.option-item:hover{
+    text-decoration: underline;
+}
+.option-item-item{
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    color: var(--primary-color);
+}
+.option-item-item h2{
+    font-size: 27px;
+}
+
+
+
+
+/* **************************************************
+    OTHERS
+************************************************* **/
+main{
+    margin: 1em 2em;
+}
+ul {
+    padding: 0;
+}
+.skills-container{
+    margin: 15px;
+}
+.wrapper-skills {
+    position: relative;
+}
+.wrapper-skills:before, .wrapper-skills:after {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 100%;
+}
+.wrapper-skills:before {
+    left: 0;
+    background: linear-gradient(90deg, var(--background-color), transparent);
+}
+.wrapper-skills:after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--background-color), transparent);
+}
+.items-skills {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0;
+    cursor: pointer;
+}
+.items-skills.active {
+    cursor: grab;
+}
+.item-skills {
+    display: inline-block;
+    margin-left: 20px;
+    user-select: none;
+    background: var(--body-color);
+    width: 200px;
+    height: 130px;
+    color: #222;
+    font-size: 33px;
+    font-weight: bold;
+    line-height: 130px;
+    border-radius: 4px;
+}
+.skill-img:hover{
+    transform: scale(1.07);
+    transition-duration: 1s;
+}
+.item-skills:last-child {
+    margin-right: 20px;
+}
+.item-skill-option{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+/* **************************************************
+    STARS
+************************************************* **/
+.star-rating-display {
+    display: inline-block;
+    position: relative;
+    font-size: 22px;
+    top: -110px;
+}
+.stars, .stars-background {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    background-color: transparent;
+    color: var(--option-color-back);
+}
+
+
+/* **************************************************
+    HUMPTY
+************************************************* **/
+.option-humpty{
+    line-height: 1.19;
+}
+.humtpy-color, .dumtpy-color, .humtpydumpty-color{
+    font-weight: bold;
+}
+.humtpy-color{
+    color: #792194;
+} 
+.dumtpy-color{
+    color: #bb322d;
+}
+.humtpydumpty-color{
+    color: var(--highlight-color);
+}
+
+/* **************************************************
+    CALENDAR
+************************************************* **/
+/* 
+.header-cal{
+    width: 550px;
+    height: 230px;
+    outline: solid red 1px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  td {
+    padding: 0;
+  }
+  
+  .calendar-container {
+    position: relative;
+    width: 350px;
+  }
+  
+  .calendar-container header {
+    border-radius: 1em 1em 0 0;
+    background: #e66b6b;
+    color: #fff;
+    padding: 3em 2em;
+  }
+  
+  .day {
+    font-size: 8em;
+    font-weight: 900;
+    line-height: 1em;
+  }
+  
+  .month {
+    font-size: 4em;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+  
+  .calendar {
+    background: #fff;
+    border-radius: 0 0 1em 1em;
+    -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px #fff;
+    color: #555;
+    display: inline-block;
+    padding: 2em;
+  }
+  
+  .calendar thead {
+    color: #e66b6b;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .calendar td {
+    padding: .5em 1em;
+    text-align: center;
+  }
+  
+  .calendar tbody td:hover {
+    background: #cacaca;
+    color: #fff;
+  }
+  
+  .current-day {
+    color: #e66b6b;
+  }
+  
+  .prev-month,
+  .next-month {
+    color: #cacaca;
+  }
+  
+  .ring-left,
+  .ring-right {
+    position: absolute;
+    top: 230px;
+  }
+  
+  .ring-left { left: 2em; }
+  .ring-right { right: 2em; }
+  
+  .ring-left:before,
+  .ring-left:after,
+  .ring-right:before,
+  .ring-right:after {
+    background: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+    content: "
+
+} */
+.x-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    position: relative;
+    width: 180px;
+    background: #fff;
+    text-align: center;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.calendar #monthName {
+    position: relative;
+    top: -20px;
+    padding: 5px 5px;
+    background-color: #181181;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.calendar #dayName {
+    margin-top: -40px;
+    font-size: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.calendar #dayNumber {
+    margin: 5px;
+    margin-top: -10px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.calendar #year {
+    margin: 5px;
+    margin-bottom: -15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+
+/* **************************************************
+    FOOTER
+************************************************* **/
+footer{
+    height: 70px;
+    background-color: var(--extralight-color);
+    color: var(--background-color);
+}
+.footer-final{
+    text-align: center;
+    padding: 25px;
+}
+
+
+/* **************************************************
+    ANIMATIONS 
+************************************************* **/
+/* --- HAMBURGER MENU HEADER --- */
+@keyframes top-line-animation{
+    0%, 100%{
+        position: relative;
+        top: 10px
+    }
+    50%, 100%{
+        margin: 0 auto;
+        transform: translateY(6px) rotate(-315deg);
+    }
+}
+@keyframes bottom-line-animation{
+    0%, 100%{
+        position: relative;
+        top: 10px
+    }
+    50%, 100%{
+        margin: 0 auto;
+        transform: translateY(-6px) rotate(315deg);
+    }
+}
+@keyframes mid-line-animation{
+    20%, 100%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+@keyframes top-line-animation-close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(6px) rotate(-315deg);
+    }
+    30%, 100%{
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+@keyframes bottom-line-animation-close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(-6px) rotate(315deg);
+    }
+    30%, 100%{
+        margin: 5px auto;
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+@keyframes mid-line-animation-close{
+    0%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+    10%, 100%{
+        margin: 0 auto;
+        width: 60%;
+        opacity: 1;
+    }
+}
+/* --- ||| END HAMBURGER MENU ||| --- */
+
+
+
+/* **************************************************
+    RESPONSIVE 
+************************************************* **/
+.test-responsive span{
+    display: none;
+}
+/* --- 1200PX --- */
+@media (max-width: 1200px){
+    /* --- RESPONSIVE --- */    
+    #r1200{
+        display: block;
+    }
+}
+
+/* --- 900PX --- */
+@media (max-width: 900px){
+    /* --- RESPONSIVE --- */    
+    #r900{
+        display: block;
+    }
+}
+
+/* --- 800PX --- */
+@media (max-width: 800px){
+    /* --- RESPONSIVE --- */    
+    #r800{
+        display: block;
+    }
+}
+
+/* --- 700PX --- */
+@media (max-width: 700px){
+    /* --- RESPONSIVE --- */    
+    #r700{
+        display: block;
+    }
+    /* --- MENU STATUS --- */
+    .header-menu{
+        display: block;
+    }
+    #menu-mobile-options{
+        display: none;
+    }
+    #menu-pc-options{
+        display: none;
+    }
+    main{
+        margin: 1em;
+    }
+}
+
+/* --- 600PX --- */
+@media (max-width: 600px){
+    /* --- RESPONSIVE --- */    
+    #r600{
+        display: block;
+    }
+}
+
+/* --- 500PX --- */
+@media (max-width: 500px){
+    /* --- RESPONSIVE --- */    
+    #r500{
+        display: block;
+    }
+}
+
+/* **************************************************
+    END? 
+************************************************* **/

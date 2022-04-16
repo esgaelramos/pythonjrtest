@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    HUMPTY DUMPTY
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>SUMA</h1>
+    <h3>Instrucciones</h3>
+    <p>
+        Si listamos todos los números naturales debajo del 10 que son múltiplos del 3 o 5, obtenemos 3, 5, 6, y 9.
+        <br>
+        La suma de estos múltiplos es 23.
+        <br><br>        
+        Escribe una función que reciba n y retorne la suma de todos los múltiplos de 3 o 5 debajo de n.
+        <br><br>
+        USANDO LA MENOR CANTIDAD DE LINEAS DE CÓDIGO.
+        <br><br>
+        Por ejemplo, si recibe 10, debe retornar 23.
+        <br>
+        Si recibe 100, debe retornar 2318. 
+    </p>
+    <form action="{% url 'core:yousuma' %}">
+
+        <label for="number">Number</label>
+        <input type="number" name="number" id="number" step="1" placeholder="100" min="0" max="10000">
+
+        <button>Generate Numbers</button>
+    
+    </form>
+
+
+{% endblock %}

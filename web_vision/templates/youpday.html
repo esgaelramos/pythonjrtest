@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    DAY PROGRAMMER 
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>YOU DAY PROGRAMMER</h1>
+    <h2>{{list}}</h2>
+    <h2>ELEGISTE: <strong>{{year}}</strong></h2>
+    {% comment %} <input type="datetime" value="{{list.0}}-{{list.1}}-{{list.2}}" name="" id=""> {% endcomment %}
+    {% if year > 2001 and year < 10000  %}
+    <h3>El día del programador del año {{list.2}} se {{list.4}} el {{list.3}} {{list.0}} de {{list.1}}.</h3>  
+        <div class="calendar-container">
+            <div class="calendar">
+                <p id='monthName'>{{list.1}}</p>
+                <p id='dayName'>{{list.3}}</p>
+                <p id='dayNumber'>{{list.0}}</p>
+                <p id='year'>{{list.2}}</p><br>
+            </div><br><br><br><br>
+        </div>
+    {% elif year == 10000 or year == 1%}
+    <h3>{{list.0}}.</h3>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VHW4ftjZcxI?controls=0&amp;start=40" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+    {% else %}
+    <h3>{{list.0}}.</h3>
+    <div class="x-container">
+        <div class="skill-img">
+            <img src="https://esgaelramos.xyz/NO.png" title="NO" alt="NO" width="200px">                                
+        </div>                    
+    </div>  
+
+    {% endif %}
+    <br>
+    <h3>Instrucciones</h3>
+    <p>
+        La idea de celebrar el día del programador se les ocurrió a Valentin Balt y Michael Cherviakov, dos programadores rusos alrededor del año 2002, quienes consiguieron que fuera reconocido oficialmente por el gobierno ruso en 2009. 
+        <br><br>
+        El 11 de septiembre de 2009 el presidente de Rusia, Dmitry Medvedev firmó el decreto que oficializó esta celebración.
+        <br><br>
+        El día del programador corresponde al día 256 del año. 
+        <br><br>
+        Este número fue elegido porque es la cantidad de valores que se pueden representar en un byte de 8 bits, una cifra muy reconocible por los programadores y por supuesto es un valor menor a 365, que son los días del año.
+        <br><br>
+        Escribe una funcion que reciba como argumento el año.
+        <br><br>
+        Al ser llamada debe retornar una lista compuesta de los siguientes elementos en ese orden:
+        <br>
+        el día del mes en que se celebrará el día del programador,
+        <br>
+        el nombre del mes en que se celebrará el día del programador,
+        <br>
+        el año que se introdujo como entrada,
+        <br>
+        el nombre del día de la semana en que se celebrará el día del programador,
+        <br>
+        y la palabra "celebrará".
+    </p>
+    <hr>
+    <h3>Calcular otro año</h3>
+    <h4>No intentes 1!</h4>
+    <form action="{% url 'core:youpday' %}">
+
+        <label for="anio">Number</label>
+        <input type="number" name="anio" id="anio" step="1" placeholder="2022" min="1" max="10000">
+
+        <button>Generate Day</button>
+    
+    </form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    HUMPTY DUMPTY
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>HUMPTY DUMPTY</h1>
+    <h3>Instrucciones</h3>
+    <p>
+        Escribe una funcion que reciba un numero n, que indica el limite superior de una lista de los números del 1 a n.
+        <br><br>
+        La función debe retornar dicha lista con sus elementos en forma de cadena, pero por cada múltiplo de 3 debe ser sustituido por 'Humpty' en vez del número, y para los múltiplos de 5, debe ser sustituido por 'Dumpty' en vez del número. 
+        <br><br>
+        Para los números que son múltiplos tanto de 3 como de 5 debe ser sustituido por 'HumptyDumpty'.
+    </p>
+    <form action="{% url 'core:youhumpty' %}">
+
+        <label for="number">Number</label>
+        <input type="number" name="number" id="number" step="1" placeholder="15" min="0" max="10000">
+
+        <button>Generate Numbers</button>
+    
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    HUMPTY DUMPTY
+{% endblock %}
+
+
+{% block content %}
+
+    <h1>YOU HUMPTY DUMPTY</h1>
+    <h3>Elegiste el {{number}} para HumptyDumpty</h3>
+    {% if number < 151 %}
+        <p>
+            HumptyDumpty lista completa: {{list}}
+        </p>
+    {% endif %}
+    <br>
+    <div class="skills-container">
+        <div class="wrapper-skills">
+            <ul class="items-skills">
+            {% for option in list %}
+                <li class="item-skills">
+                    {% if option == 'Humpty' %}
+                        <div class="skill-img">
+                            <img src="https://esgaelramos.xyz/HUMPTY.png" id="{{option}}" title="{{option}}" alt="HUMPTY" width="200px">                                
+                        </div>
+                    {% elif option == 'Dumpty' %}
+                        <div class="skill-img">
+                            <img src="https://esgaelramos.xyz/DUMPTY.png" id="{{option}}" title="{{option}}" alt="DUMPTY" width="200px">                                
+                        </div>
+                    {% elif option == 'HumptyDumpty' %}
+                        <div class="skill-img">
+                            <img src="https://esgaelramos.xyz/HUMPTYDUMPTY.png" id="{{option}}" title="{{option}}" alt="HUMPTYDUMPTY" width="200px">                                
+                        </div>
+                    {% else %}
+                        <div class="skill-img">
+                            <img src="https://esgaelramos.xyz/NO.png" id="{{option}}" title="{{option}}" alt="NO" width="200px">                                
+                        </div>                
+                    {% endif %}
+                    <div class="star-rating-display">
+                        <span class="stars">Cayó {{option}}</span>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>   
+    </div>
+    <h3>Instrucciones</h3>
+    <p>
+        Escribe una funcion que reciba un numero n, que indica el limite superior de una lista de los números del 1 a n.
+        <br><br>
+        La función debe retornar dicha lista con sus elementos en forma de cadena, pero por cada múltiplo de 3 debe ser sustituido por 'Humpty' en vez del número, y para los múltiplos de 5, debe ser sustituido por 'Dumpty' en vez del número. 
+        <br><br>
+        Para los números que son múltiplos tanto de 3 como de 5 debe ser sustituido por 'HumptyDumpty'.
+    </p>            
+    <h3>Listado Completo</h3>
+    {% for option in list %}
+        {% if option == 'Humpty' %}
+        <span class="option-humpty humtpy-color">
+        {% elif option == 'Dumpty' %}
+        <span class="option-humpty dumtpy-color">
+        {% elif option == 'HumptyDumpty' %}
+        <span class="option-humpty humtpydumpty-color">
+        {% else %}
+        <span class="option-humpty">
+        {% endif %}
+        Cayó {{option}}
+        </span><br>        
+    {% endfor %}
+    
+    <hr>
+    <h3>Calcular otro número</h3>
+    <form action="{% url 'core:youhumpty' %}">
+
+        <label for="number">Number</label>
+        <input type="number" name="number" id="number" step="1" placeholder="15" min="0" max="10000">
+
+        <button>Generate Numbers</button>
+    
+    </form>
+
+    
+{% endblock %}
